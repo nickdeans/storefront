@@ -1,34 +1,37 @@
 let initialState = {
+    activeCategory: '',
+    activeDescription: '',
     categories: [
-        { name: "Electronics", },
-        { name: "Food"}
+        { name: "Electronics", description: "electronic toys" },
+        { name: "Food", description: "food you can eat" }
     ]
 }
-let  categories;
 
 export default function CategoryReducer(state = initialState, action) {
     let { type, payload } = action;
 
     switch (type) {
         case "SWITCH_CATEGORY":
-
-            categories = state.categories.map(category => {
-                if (category.name === payload) {
-                    return { name: category.name }
-                }
-                return category;
-            });
-
-            return { categories: categories }
-            default:
+            return initialState;
+        case "SWITCH_CATEGORY_TWO":
+            return {...state, activeCategory: payload.category, activeDescription: payload.description};
+        default:
                 return state;
     }
 }
 
-export function switchCategory(name) {
+export function switchCategory() {
     return {
         type: "SWITCH_CATEGORY",
-        payload: name,
-    }
+    };
 }
 
+export function switchCategoryTwo(category, description) {
+    return {
+        type: "SWITCH_CATEGORY_TWO",
+        payload: {
+            category,
+            description
+        }
+    };
+}
