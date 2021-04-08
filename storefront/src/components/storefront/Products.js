@@ -10,11 +10,11 @@ import CardContent from '@material-ui/core/CardContent';
 import { getProducts } from '../../store/products.js'
 import { connect } from 'react-redux';
 import { switchCategoryTwo } from '../../store/categories.js';
+import '../storefront/products.scss';
 
 const Products = (props) => {
     return (
-        <Paper elevation={3}>
-            <Grid container justify="center" spacing={5}>
+            <Grid container justify="center" spacing={5} className="product-interface">
                 {props.products.productList.map((product, index) => {
                     if (product.category === props.activeCategory) {
                         return (
@@ -36,7 +36,6 @@ const Products = (props) => {
                     }
                 })}
             </Grid>
-        </Paper>
     )
 }
 

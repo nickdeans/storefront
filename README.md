@@ -12,3 +12,7 @@
     - Update quantities
     - Remove items from the cart
     - Show the cart in real-time on the UI
+
+- Phase 3: Live Data
+    - Connect the application a live API
+    - Persist changes to products based on cart activity.

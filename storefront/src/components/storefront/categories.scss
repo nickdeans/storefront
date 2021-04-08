@@ -1,0 +1,19 @@
+.categories {
+    height: 5vh;
+    padding-top: 20px;
+    padding-left: 50px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.category-button {
+    display: flex;
+    margin-top: -10px;
+    margin-left: 75px;
+    justify-content: flex-start;
+    color: blue;
+}
+
+.category-parent {
+    height: 20vh;
+}

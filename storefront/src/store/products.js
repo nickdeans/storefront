@@ -30,6 +30,7 @@ const initialState = {
         category: 'Food',
       },
     ],
+    productName: {name: 'Electronic'},
     activeProduct: ''
   }
   
