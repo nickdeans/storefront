@@ -1,5 +1,4 @@
 import React from 'react';
-import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -10,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent';
 import { getProducts } from '../../store/products.js'
 import { connect } from 'react-redux';
 import { switchCategoryTwo } from '../../store/categories.js';
+import { addCart } from '../../store/cart.js'
 import '../storefront/products.scss';
 
 const Products = (props) => {
@@ -25,7 +25,7 @@ const Products = (props) => {
                                         <Typography component="p">IMAGE</Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <IconButton>Add to cart</IconButton>
+                                        <IconButton onClick={() => props.addCart(product)}>Add to cart</IconButton>
                                         <IconButton>View Details</IconButton>
                                     </CardActions>
                                 </Card>
@@ -46,7 +46,8 @@ const mapStateToProps = state => {
   
   const mapDispatchToProps = {
     getProducts,
-    switchCategoryTwo
+    switchCategoryTwo,
+    addCart
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(Products);

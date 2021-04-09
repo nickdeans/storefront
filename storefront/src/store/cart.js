@@ -1,6 +1,5 @@
 const initialState = {
     cart: [],
-    visible: false
 }
 
 export default function cartReducer(state = initialState, action) {
@@ -24,16 +23,16 @@ export default function cartReducer(state = initialState, action) {
     }
 }
 
-export function addCart(product) {
+export function addCart(name) {
     return {
         type: 'ADD_CART',
-        payload: product
+        payload: name,
     }
 }
 
-export function deleteCart(product) {
+export function deleteCart(name) {
     return {
         type: 'DELETE_CART',
-        payload: product
+        payload: name
     }
 }
